@@ -1,0 +1,27 @@
+list-ultimos-pedidos {
+  .item-header {
+    background: color($colors, primary);
+  }
+  .data-pedido {
+    margin: 0;
+    padding: 3px;
+    background: white;
+    border-radius: 5px;
+    font-weight: 900;
+  }
+  * {
+    color: color($colors, primaryDark);
+  }
+  .div-qtd-pedidos{
+    background: #e2f2ff;
+    width: 110%;
+    margin-left: -16px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  color($colors, primary);
+    font-style: italic;
+    font-weight: 900;
+  }
+}

@@ -1,5 +1,13 @@
 {
   "name": "tbm-mobile-ionic",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [{
+        "path": "/api",
+        "proxyUrl": "http://128.1.11.62:8080",
+        "rejectUnauthorized": false
+    }]
 }

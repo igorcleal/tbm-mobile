@@ -1,0 +1,40 @@
+<div *ngIf="listUltimosPedidos!=null" class="div-qtd-pedidos">
+    {{listUltimosPedidos.length}} pedidos
+</div>
+
+<ion-list>
+  <ion-card *ngFor="let item of listUltimosPedidos">
+
+    <ion-card-header no-padding>
+      <ion-item class="item-header">
+        <p color="light" ion-text>{{item.cliente}}</p>
+        <p color="primary" ion-text item-right style="margin:0;" class="data-pedido">
+          {{item.dataPedido | date : 'dd/MM/y'}}
+        </p>
+      </ion-item>
+    </ion-card-header>
+
+    <ion-label padding-horizontal>
+      <b>Representante:</b> <span style="font-size:1.2rem;">{{item.representante}}</span>
+    </ion-label>
+
+    <ion-label padding-horizontal>
+      <b>Item:</b> {{item.item}}
+    </ion-label>
+
+    <ion-row margin-bottom>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Preço</ion-label>
+        <ion-label no-margin>{{item.preco| currency:'BRL':true:'1.2-2'}}</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Volume</ion-label>
+        <ion-label no-margin>{{item.volume| number : '1.2-2'}}</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Prazo</ion-label>
+        <ion-label no-margin>{{item.prazoPedido}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-list>

@@ -1,0 +1,36 @@
+<ion-header no-border>
+    
+    
+      <ion-navbar color="primary">
+        <ion-buttons left>
+          <button ion-button icon-only (click)="fechar()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>Itens</ion-title>
+      </ion-navbar>
+    
+      <ion-toolbar color="primaryLight" mode="md">
+        <ion-searchbar (ionInput)="onInput($event)" [(ngModel)]="busca" class="search-bar">
+        </ion-searchbar>
+      </ion-toolbar>
+    
+    </ion-header>
+    
+    <ion-content padding>
+    
+      <ion-list>
+        <button ion-item *ngFor="let item of listItens" style="background:transparent"
+          (click)="fechar(item)">
+          {{item.descricao}}
+        </button>
+      </ion-list>
+    
+    </ion-content>
+    
+    <ion-footer>
+      <div style="text-align:center;background:beige; padding:5px">
+        <span color="primary">{{listItens.length}} registros</span>
+      </div>
+    </ion-footer>
+    

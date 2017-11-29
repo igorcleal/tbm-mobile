@@ -1,0 +1,17 @@
+list-volume-faturado {
+  .card-header {
+    background: color($colors,primary);
+    color: white;
+    padding: 5px;
+    font-size: 1.5rem;
+  }
+  .volume {
+    text-align: center;
+    font-size: 2rem;
+    margin:15px;
+    color:black;
+  }
+  .header-total{
+    background: color($colors,primaryDark);
+  }
+}

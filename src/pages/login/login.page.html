@@ -1,0 +1,33 @@
+<ion-content padding style="background:#1A3C6C">
+
+  <div class="div-login">
+
+    <div class="div-img" style="margin-bottom:15%;">
+      <img src="assets/img/tbm-branco.svg" />
+    </div>
+
+      <form [formGroup]="formLogin"  margin-top>
+
+        <ion-item class="input-login">
+          <ion-input placeholder="Login" formControlName="email" (focus)="focoEmail = true;" (blur)="focoEmail = false;"></ion-input>
+          <ion-icon [style.color]="focoEmail==true?'#001741':'gray'" item-right name="person"></ion-icon>
+        </ion-item>
+
+        <ion-item class="input-login" margin-top>
+          <ion-input placeholder="Senha" formControlName="password" (focus)="focoSenha = true;" (blur)="focoSenha = false;"></ion-input>
+          <ion-icon [style.color]="focoSenha==true?'#001741':'gray'" item-right name="lock"></ion-icon>
+        </ion-item>
+
+        <button (click)="login()" ion-button round full margin-top color="primaryDark">Entrar</button>
+
+      </form>
+
+  </div>
+
+</ion-content>
+
+<ion-footer no-border>
+  <div class="footer">
+    @ 2017 - Têxtil Bezerra de Menezes
+  </div>
+</ion-footer>

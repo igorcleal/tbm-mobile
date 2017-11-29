@@ -1,0 +1,54 @@
+<div *ngIf="listPedidosAbertos!=null" class="div-qtd-pedidos">
+    {{listPedidosAbertos.length}} pedidos
+</div>
+
+<ion-list>
+  <ion-card *ngFor="let item of listPedidosAbertos">
+
+    <ion-card-header no-padding>
+      <ion-item class="item-header">
+        <p color="light" ion-text>{{item.pedidoNumero}} - {{item.linha}} - {{item.cliente}}</p>
+        <p color="primary" ion-text item-right style="margin:0;" class="data-pedido">
+          {{item.dataEmissao}}
+        </p>
+      </ion-item>
+    </ion-card-header>
+
+    <ion-row margin-bottom>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Preço</ion-label>
+        <ion-label no-margin>{{item.preco| currency:'BRL':true:'1.2-2'}}</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Volume</ion-label>
+        <ion-label no-margin>{{item.volume| number : '1.2-2'}}</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Cond. Pag.</ion-label>
+        <ion-label no-margin>{{item.codpgto}}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row margin-bottom>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Dt. Entrega Inicial</ion-label>
+        <ion-label no-margin>{{item.dataEntregaInicial}}</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Atraso Inicial</ion-label>
+        <ion-label no-margin>{{item.diasAtrasoInicial}}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row margin-bottom>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Dt. Entrega Atual</ion-label>
+        <ion-label no-margin>{{item.dataEntregaAtual}}</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;" no-padding>
+        <ion-label style="font-weight: bold" no-margin>Atraso Atual</ion-label>
+        <ion-label no-margin>{{item.diasAtrasoAtual}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-list>

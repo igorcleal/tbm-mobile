@@ -1,0 +1,17 @@
+<ion-list>
+  <ion-card *ngFor="let item of listVolumeFaturado">
+
+    <ion-card-header class="card-header">
+      {{item.periodo}}
+    </ion-card-header>
+    <p class="volume">{{item.volume| currency:'BRL':true:'1.2-2'}}</p>
+  </ion-card>
+
+  <ion-card *ngIf="listVolumeFaturado && listVolumeFaturado.length>0">
+
+    <ion-card-header class="card-header header-total" color="primaryDark">
+      Total
+    </ion-card-header>
+    <p class="volume">{{totalFaturado| currency:'BRL':true:'1.2-2'}}</p>
+  </ion-card>
+</ion-list>

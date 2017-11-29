@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Histórico Geral</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="abrirFiltros()">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+  <ion-toolbar color="primaryLight" >
+      <ion-item style='background:transparent' no-lines>
+        <img item-left src="assets/img/icon-client-branco.svg" style="width:4rem;">
+        <span ion-text color="light">{{cliente}}</span>
+      </ion-item>
+    </ion-toolbar>
+
+  <ion-toolbar color="primaryLight" >
+    <ion-item style='background:transparent' no-lines>
+      <img item-left src="assets/img/icon-fio-branco.svg" style="width:4rem;">
+      <span ion-text color="light">{{item}}</span>
+    </ion-item>
+  </ion-toolbar>
+
+  <ion-segment margin-top [(ngModel)]="segment" padding-horizontal [disabled]="segment==null">
+    <ion-segment-button value="volume_faturado">
+      Volume Faturado
+    </ion-segment-button>
+    <ion-segment-button value="ultimos_pedidos">
+      Últimos pedidos
+    </ion-segment-button>
+    <ion-segment-button value="pedidos_abertos" [disabled]="item==null || item ==''">
+      Pedidos abertos
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <list-volume-faturado *ngIf="segment=='volume_faturado'" [cliente]="cliente" [item]="item">
+  </list-volume-faturado>
+
+  <list-ultimos-pedidos *ngIf="segment=='ultimos_pedidos'" [cliente]="cliente" [item]="item">
+  </list-ultimos-pedidos>
+
+  <list-pedidos-abertos *ngIf="segment=='pedidos_abertos'" [cliente]="cliente" [item]="item">
+  </list-pedidos-abertos>
+
+</ion-content>

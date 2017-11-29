@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, LOCALE_ID } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule } from "@angular/http";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -8,6 +9,12 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginService } from '../providers/login-service/login-service';
+import { HttpProvider } from '../providers/http/http';
+import { ClienteSadigProvider } from '../providers/cliente-sadig/cliente-sadig.provider';
+import { UtilsProvider } from '../providers/utils/utils.provider';
+import { ItemSadigProvider } from '../providers/item-sadig/item-sadig.provider';
+import { HistoricoGeralProvider } from '../providers/historico-geral/historico-geral.provider';
 
 @NgModule({
   declarations: [
@@ -18,6 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,7 +36,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    LoginService,
+    HttpProvider,
+    ClienteSadigProvider,
+    UtilsProvider,
+    ItemSadigProvider,
+    HistoricoGeralProvider
   ]
 })
 export class AppModule {}

@@ -34,11 +34,16 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #1A3C6C,
+  primaryDark: #001741,
+  primaryLight: #4c669b,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  azulLight:  #e2f2ff,
+  dark:       black,
+  btn:          #010f27,
+  btnAzulLight:    #97baef
 );
 
 
@@ -71,6 +76,10 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
+$background-ios-color: #f7f7f7;
+$background-md-color: #f7f7f7;
+$background-wp-color: white;
+
 
 
 // Ionicons

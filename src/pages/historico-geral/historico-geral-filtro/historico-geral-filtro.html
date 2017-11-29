@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="fechar()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Histórico Geral</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button round outline block (focus)="abrirPopupCliente()" margin-top>
+    <ion-item>
+      <img item-left src="assets/img/icon-client-azul.svg" style="width:4rem;"> {{!clienteStr ?'Cliente...':clienteStr}}
+    </ion-item>
+  </button>
+
+  <button ion-button round outline block (focus)="abrirPopupItem()" margin-top>
+    <ion-item>
+      <img item-left src="assets/img/icon-fio-azul.svg" style="width:4rem;"> {{!itemStr ?'Item...':itemStr}}
+    </ion-item>
+  </button>
+
+</ion-content>
+
+<ion-footer no-border padding>
+
+  <button ion-button block round color="btnAzulLight" style="color:black" (click)="limparFiltros()">
+    Limpar Filtros
+  </button>
+
+  <button ion-button block round  (click)="pesquisar()">
+    <ion-icon name="search" margin-right></ion-icon>
+    Pesquisar
+  </button>
+</ion-footer>

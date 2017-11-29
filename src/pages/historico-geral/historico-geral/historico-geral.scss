@@ -1,0 +1,14 @@
+page-historico-geral {
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    height: 12%;
+    .tab {
+      width: 30%;
+      height: 100%;
+      background: transparent;
+      color:black;
+      text-transform: capitalize;
+    }
+  }
+}
