@@ -1,0 +1,22 @@
+page-tabela-precos {
+  .header-categoria2 {
+    font-size: 2vh;
+    background: color($colors, primaryLight);
+    color: white;
+    font-weight: 900;
+    margin-left: -16px;
+    width: 120%;
+  }
+  .header-categoria3 {
+    background: #e5e5e5;
+    font-size: 2vh;
+    font-weight: 900;
+    margin-left: -16px;
+    width: 120%;
+  }
+  .search-bar .searchbar-input {
+    background: transparent;
+    box-shadow: none;
+    color: white
+  }
+}

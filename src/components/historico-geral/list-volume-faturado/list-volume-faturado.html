@@ -1,17 +1,33 @@
-<ion-list>
-  <ion-card *ngFor="let item of listVolumeFaturado">
+<ion-slides pager="true">
+  <ion-slide class="slide-zoom">
+    <ion-list class="listSlide">
+      <ion-card *ngFor="let item of listVolumeFaturado">
 
-    <ion-card-header class="card-header">
-      {{item.periodo}}
-    </ion-card-header>
-    <p class="volume">{{item.volume| currency:'BRL':true:'1.2-2'}}</p>
-  </ion-card>
+        <ion-card-header class="card-header">
+          {{item.periodo}}
+        </ion-card-header>
+        <p class="volume">{{item.volume| currency:'BRL':true:'1.2-2'}}</p>
+      </ion-card>
 
-  <ion-card *ngIf="listVolumeFaturado && listVolumeFaturado.length>0">
+      <ion-card *ngIf="listVolumeFaturado && listVolumeFaturado.length>0">
 
-    <ion-card-header class="card-header header-total" color="primaryDark">
-      Total
-    </ion-card-header>
-    <p class="volume">{{totalFaturado| currency:'BRL':true:'1.2-2'}}</p>
-  </ion-card>
-</ion-list>
+        <ion-card-header class="card-header header-total" color="primaryDark">
+          Total
+        </ion-card-header>
+        <p class="volume">{{totalFaturado| currency:'BRL':true:'1.2-2'}}</p>
+      </ion-card>
+    </ion-list>
+  </ion-slide>
+  <ion-slide >
+      <ion-card class="listSlide">
+          <ion-card-header>
+            Volume últimos 6 meses
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #barCanvas></canvas>
+          </ion-card-content>
+        </ion-card>
+  </ion-slide>
+
+</ion-slides>
+

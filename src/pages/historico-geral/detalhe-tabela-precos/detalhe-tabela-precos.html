@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="fechar()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{fio}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row>
+    <ion-label text-center class="titulo">
+      Valores
+    </ion-label>
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col>
+      <ion-label text-center class="valor">
+        {{dadosItem.custo| number:'1.2-2'}}
+      </ion-label>
+      <ion-label text-center class="label-campo">
+        Custo(R$)
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label text-center class="valor">
+        {{dadosItem.preco| number:'1.2-2'}}
+      </ion-label>
+      <ion-label text-center class="label-campo">
+        Preço(R$)
+      </ion-label>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col>
+      <ion-label text-center class="valor">
+        {{dadosItem.margem| number:'1.2-2'}}
+      </ion-label>
+      <ion-label text-center class="label-campo">
+        Margem
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label text-center class="valor">
+        {{dadosItem.realPorQuilo| number:'1.2-2'}}
+      </ion-label>
+      <ion-label text-center class="label-campo">
+        R$/KG
+      </ion-label>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col>
+      <ion-label text-center class="valor">
+        {{dadosItem.precoMedio| number:'1.2-2'}}
+      </ion-label>
+      <ion-label text-center class="label-campo">
+        Preço Médio
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-label text-center class="titulo">
+      Disponibilidade
+    </ion-label>
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col>
+      <ion-label text-center class="valor">
+        {{dadosItem.volumeDisponivel| number:'1.2-2'}}
+      </ion-label>
+      <ion-label text-center class="label-campo">
+        Volume Disponível
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label text-center class="valor">
+        {{dadosItem.disponibilidade}}
+      </ion-label>
+      <ion-label text-center class="label-campo">
+        Disponibilidade
+      </ion-label>
+    </ion-col>
+
+  </ion-row>
+
+</ion-content>

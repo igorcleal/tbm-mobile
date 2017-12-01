@@ -75,4 +75,8 @@ export class HistoricoGeralPage {
     return false
   }
 
+  abrirTabelaPrecos(){
+    this.navCtrl.push('TabelaPrecosPage');
+  }
+
 }

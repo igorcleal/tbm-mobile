@@ -1,0 +1,65 @@
+page-modal-mensagem {
+    .content {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    .scroll-content {
+      align-content: center;
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      .modal {
+        align-content: center;
+        align-items: center;
+        background-color: #FFF;
+        box-shadow: 1px 2px 14px 0px rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-flow: column nowrap;
+        height: auto;
+        justify-content: center;
+        padding: 35px;
+        width: 72vw;
+        .modal__ico {
+          display: block;
+          text-align: center;
+          width: 100%;
+          svg {
+            max-width: 123px;
+            margin: auto;
+            width: 35%;
+          }
+          .icon {
+            color: #efc526;
+            font-size: 15vh;
+            margin-bottom: 8%;
+          }
+        }
+        .modal__msg {
+          display: block;
+          margin-bottom: 20px;
+          text-align: center;
+          width: 100%;
+          p {
+            color: #212e42;
+            font-size: 2.2rem;
+            span {
+              font-weight: 700;
+            }
+          }
+        }
+        .modal__btn {
+          background-color: #FFF;
+          border: 1px solid #3b5998;
+          border-radius: 50px;
+          color: #3b5998;
+          display: block;
+          font-size: 1.6rem;
+          margin: auto;
+          padding: 15px 25px;
+          text-align: center;
+          width: 90%;
+        }
+      }
+    }
+  }
+  

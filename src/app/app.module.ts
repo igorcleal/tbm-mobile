@@ -15,6 +15,7 @@ import { ClienteSadigProvider } from '../providers/cliente-sadig/cliente-sadig.p
 import { UtilsProvider } from '../providers/utils/utils.provider';
 import { ItemSadigProvider } from '../providers/item-sadig/item-sadig.provider';
 import { HistoricoGeralProvider } from '../providers/historico-geral/historico-geral.provider';
+import { TabelaPrecosProvider } from '../providers/tabela-precos/tabela-precos.provider';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HistoricoGeralProvider } from '../providers/historico-geral/historico-g
     ClienteSadigProvider,
     UtilsProvider,
     ItemSadigProvider,
-    HistoricoGeralProvider
+    HistoricoGeralProvider,
+    TabelaPrecosProvider
   ]
 })
 export class AppModule {}

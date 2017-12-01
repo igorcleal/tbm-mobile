@@ -1,3 +1,4 @@
+import { UtilsProvider } from './../../../providers/utils/utils.provider';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -16,17 +17,16 @@ export class HistoricoGeralFiltroPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public modalCtrl: ModalController,
-    public viewCtrl: ViewController) {
-      this.clienteStr = navParams.get('cliente');
-      this.itemStr = navParams.get('item');
+    public viewCtrl: ViewController,
+    public utils: UtilsProvider) {
+    this.clienteStr = navParams.get('cliente');
+    this.itemStr = navParams.get('item');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoricoGeralFiltroPage');
   }
 
   abrirPopupCliente() {
-    console.log('este');
     let modal = this.modalCtrl.create('PesquisaClientePage');
 
     modal.onDidDismiss(data => {
@@ -53,14 +53,20 @@ export class HistoricoGeralFiltroPage {
   }
 
   pesquisar() {
+
+    if (!this.clienteStr && !this.itemStr) {
+      this.utils.popupMensagem("Escolha um item ou um cliente!");
+      return
+    }
+
     this.viewCtrl.dismiss({ cliente: this.clienteStr, item: this.itemStr });
   }
 
-  fechar(){
+  fechar() {
     this.viewCtrl.dismiss();
   }
 
-  limparFiltros(){
+  limparFiltros() {
     this.clienteStr = "";
     this.itemStr = "";
   }

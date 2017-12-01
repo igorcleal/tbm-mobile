@@ -1,0 +1,17 @@
+page-detalhe-tabela-precos {
+    .titulo{
+        background: color($colors, primaryLight);
+        color:white;
+        font-size: 2rem;
+        padding:5px;
+    }
+
+    .valor{
+        font-size: 2.5rem;
+    }
+
+    .label-campo{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}

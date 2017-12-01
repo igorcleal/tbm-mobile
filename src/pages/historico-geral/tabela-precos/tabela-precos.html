@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Tabela de preços</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="primaryLight" mode="md">
+      <ion-searchbar (ionInput)="onInput($event)" [(ngModel)]="busca" class="search-bar">
+      </ion-searchbar>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <div *ngFor="let item of listFios; let i = index;">
+      <ion-list-header class="header-categoria2" *ngIf="i==0 || item.categoria2 != listFios[i-1].categoria2">
+        {{item.categoria2}}
+      </ion-list-header>
+      <ion-list-header no-lines class="header-categoria3" *ngIf="i==0 || item.categoria3 != listFios[i-1].categoria3">
+          {{item.categoria3}}
+        </ion-list-header>
+      <button ion-item style="background:transparent" (click)="abrirDetalhesItem(item)">
+        {{item.fio}}
+      </button>
+      </div>
+  </ion-list>
+</ion-content>

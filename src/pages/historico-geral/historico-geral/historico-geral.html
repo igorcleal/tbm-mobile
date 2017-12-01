@@ -4,6 +4,9 @@
     <ion-title>Histórico Geral</ion-title>
 
     <ion-buttons right>
+        <button ion-button icon-only (click)="abrirTabelaPrecos()">
+            <ion-icon name="list-box"></ion-icon>
+          </button>
       <button ion-button icon-only (click)="abrirFiltros()">
         <ion-icon name="funnel"></ion-icon>
       </button>
@@ -11,16 +14,16 @@
 
   </ion-navbar>
 
-  <ion-toolbar color="primaryLight" >
+  <ion-toolbar color="primaryLight" style="height:20px;">
       <ion-item style='background:transparent' no-lines>
-        <img item-left src="assets/img/icon-client-branco.svg" style="width:4rem;">
+        <img item-left src="assets/img/icon-client-branco.svg" style="width:3rem;">
         <span ion-text color="light">{{cliente}}</span>
       </ion-item>
     </ion-toolbar>
 
-  <ion-toolbar color="primaryLight" >
+  <ion-toolbar color="primaryLight" style="height:20px;">
     <ion-item style='background:transparent' no-lines>
-      <img item-left src="assets/img/icon-fio-branco.svg" style="width:4rem;">
+      <img item-left src="assets/img/icon-fio-branco.svg" style="width:3rem;">
       <span ion-text color="light">{{item}}</span>
     </ion-item>
   </ion-toolbar>

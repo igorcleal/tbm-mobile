@@ -14,4 +14,9 @@ list-volume-faturado {
   .header-total{
     background: color($colors,primaryDark);
   }
+  .listSlide{
+    position:absolute;
+    top:0px;
+    width:100%; 
+}
 }
