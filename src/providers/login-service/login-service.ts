@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Constants } from '../../utils/constants';
 
 @Injectable()
 export class LoginService {
@@ -9,21 +10,19 @@ export class LoginService {
 
   }
 
-  login() {
+  login(login: string, password: string) {
 
-    const h = this.getHeaders(btoa('user:pass'));
+    const h = this.getHeaders(btoa(login+':'+password));
     let headers = new Headers(h);
     let optionss = new RequestOptions({ 'headers': headers });
-    this.http.get('http://localhost:8100/api/ws-tbmmobile/rest/library/books', optionss).subscribe((data) => {
-      console.log(data);
-    })
+    return this.http.get(`${Constants.urlWs}itemSadig`, optionss);
   }
 
   getHeaders(authorization) {
     return {
       // 'Accept': 'application/json',
       // 'Content-Type': 'application/json',
-      'Authorization': authorization
+      'Authorization': 'Basic ' + authorization
     }
   }
 

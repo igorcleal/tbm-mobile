@@ -14,13 +14,13 @@
 
 <ion-content padding>
 
-  <button ion-button round outline block (focus)="abrirPopupCliente()" margin-top>
+  <button ion-button round outline block (click)="abrirPopupCliente()" margin-top>
     <ion-item>
       <img item-left src="assets/img/icon-client-azul.svg" style="width:3rem;"> {{!clienteStr ?'Cliente...':clienteStr}}
     </ion-item>
   </button>
 
-  <button ion-button round outline block (focus)="abrirPopupItem()" margin-top>
+  <button ion-button round outline block (click)="abrirPopupItem()" margin-top>
     <ion-item>
       <img item-left src="assets/img/icon-fio-azul.svg" style="width:3rem;"> {{!itemStr ?'Item...':itemStr}}
     </ion-item>

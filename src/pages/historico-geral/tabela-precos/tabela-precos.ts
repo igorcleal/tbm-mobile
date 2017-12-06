@@ -1,8 +1,7 @@
 import { UtilsProvider } from './../../../providers/utils/utils.provider';
-import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { TabelaPrecosProvider } from './../../../providers/tabela-precos/tabela-precos.provider';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 @IonicPage()
 @Component({

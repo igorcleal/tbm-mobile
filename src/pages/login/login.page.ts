@@ -11,20 +11,28 @@ import { LoginService } from "../../providers/login-service/login-service";
 export class LoginPage {
 
   formLogin: any;
+  login:string;
+  password:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder,
     public loginService:LoginService) {
 
     this.formLogin = formBuilder.group({
-      email: ['', Validators.compose([Validators.required])],
+      login: ['', Validators.compose([Validators.required])],
       password: ['', Validators.compose([Validators.required])]
     });
 
   }
 
-  login(){
-    //this.loginService.login();
-    this.navCtrl.push('HistoricoGeralPage');
+  logar(){
+    this.loginService.login(this.login, this.password).subscribe((response)=>{
+      console.log('success');
+      console.log(response);
+    },(error)=>{
+      console.error(error);
+      console.error('error');
+    })
+    //this.navCtrl.push('HistoricoGeralPage');
   }
 
   ionViewDidLoad() {
